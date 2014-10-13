@@ -26,6 +26,19 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Google Authentication Backend with Python Social Auth
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '169001451925-cd8pr5k1fqn0304s6ioihu6rs03fgec9.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'VOU5JgOAtjzODFArpDJGwEuy'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://www.googleapis.com/auth/analytics']
+LOGIN_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
 
 # Application definition
 
@@ -37,6 +50,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cronutapp',
+    'oauthlib',
+
 )
 
 MIDDLEWARE_CLASSES = (
