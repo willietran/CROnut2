@@ -5,6 +5,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Examples:
+    url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^$', 'cronutapp.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
